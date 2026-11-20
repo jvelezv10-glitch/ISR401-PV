@@ -1,0 +1,84 @@
+% Guion de entrevista semiestructurada (instrumento 1 de TA-PFC-E1)
+% Compilar con pdfLaTeX. Es el mismo guion de la seccion E.3 de main.tex.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{mathptmx}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.5}
+\pagestyle{plain}
+\begin{document}
+
+\begin{center}
+{\large\textbf{NEXORA --- Guion de entrevista semiestructurada}}\\[2pt]
+{\small UTEQ $\cdot$ Ingenier\'ia de Requerimientos (ISR-401) $\cdot$ Paralelo B $\cdot$ TA-PFC-E1}
+\end{center}
+
+\textbf{Datos de la sesi\'on} (se llenan a mano; no se escribe el nombre del entrevistado)
+
+\begin{tabularx}{\textwidth}{|L{5.2cm}|X|}
+\hline
+C\'odigo del participante & \\ \hline
+Rol (parte interesada) & \\ \hline
+Fecha y lugar & \\ \hline
+Hora de inicio y hora de fin & \\ \hline
+Entrevistador(a) & \\ \hline
+Consentimiento firmado antes de empezar & \quad S\'i $\square$ \qquad No $\square$ \\ \hline
+Autoriz\'o grabaci\'on de audio (fila b) & \quad S\'i $\square$ \qquad No $\square$ \\ \hline
+\end{tabularx}
+
+\textbf{Antes de empezar:} saludar, explicar el objetivo, recordar que puede omitir preguntas o terminar cuando quiera, y comprobar que el consentimiento est\'a firmado. Solo se aplica el bloque de preguntas que corresponde al rol del participante.
+
+
+\textbf{Objetivo:} Identificar las necesidades, dificultades, expectativas y caracter\'isticas de b\'usqueda y promoci\'on de servicios de los clientes, profesionales independientes y propietarios de establecimientos comerciales, con la finalidad de establecer los requisitos del sistema propuesto.
+
+\vspace{3pt}
+\noindent\textbf{A. Parte interesada 1: Clientes o usuarios}\\
+\textit{Objetivo de la entrevista:} Conocer c\'omo las personas buscan actualmente profesionales o establecimientos comerciales cuando necesitan un servicio.
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1pt, topsep=2pt]
+    \item Cuando necesita contratar un servicio, como electricidad, plomer\'ia, cerrajer\'ia o carpinter\'ia, ?`c\'omo suele encontrar a la persona o establecimiento que lo ofrece?
+    \item ?`Qu\'e dificultades ha experimentado al momento de buscar un profesional o establecimiento que ofrezca el servicio que necesita?
+    \item ?`Qu\'e medios utiliza actualmente para encontrar profesionales o negocios? Por ejemplo, recomendaciones de conocidos, redes sociales, buscadores de Internet u otros.
+    \item ?`Qu\'e informaci\'on considera importante conocer antes de comunicarse con un profesional o establecimiento comercial?
+    \item ?`Qu\'e importancia tienen para usted las fotograf\'ias de trabajos realizados anteriormente al momento de elegir un profesional? ?`Por qu\'e?
+    \item ?`C\'omo influye la ubicaci\'on geogr\'afica al momento de buscar un servicio? ?`Qu\'e tan importante es encontrar profesionales dentro de su ciudad, cant\'on o sector?
+    \item ?`Qu\'e aspectos le generan confianza o desconfianza cuando encuentra a un profesional o establecimiento que no conoce?
+\end{enumerate}
+
+\vspace{3pt}
+\noindent\textbf{B. Parte interesada 2: Profesionales independientes}\\
+\textit{Objetivo de la entrevista:} Conocer c\'omo los trabajadores independientes ofrecen sus servicios, promocionan sus habilidades y consiguen nuevos clientes.
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1pt, topsep=2pt, start=8]
+    \item ?`Podr\'ia contarme a qu\'e actividad u oficio se dedica y qu\'e tipos de servicios ofrece actualmente?
+    \item ?`C\'omo consigue actualmente nuevos clientes y c\'omo da a conocer los servicios que ofrece?
+    \item ?`Qu\'e dificultades encuentra al momento de promocionar sus servicios o conseguir nuevos clientes?
+    \item ?`Qu\'e medios utiliza actualmente para mostrar fotograf\'ias, ejemplos o evidencias de los trabajos que ha realizado?
+    \item ?`Qu\'e informaci\'on considera importante que un cliente conozca sobre usted antes de comunicarse para solicitar sus servicios?
+    \item ?`En qu\'e lugares o sectores ofrece sus servicios? ?`C\'omo determina las zonas a las que est\'a dispuesto a desplazarse para realizar un trabajo?
+    \item Si tuviera un perfil digital donde pudiera mostrar sus servicios, experiencia, fotograf\'ias de trabajos realizados y datos de contacto, ?`qu\'e informaci\'on le gustar\'ia incluir y qu\'e beneficios esperar\'ia obtener?
+\end{enumerate}
+
+\vspace{3pt}
+\noindent\textbf{C. Parte interesada 3: Propietarios de establecimientos comerciales}\\
+\textit{Objetivo de la entrevista:} Identificar c\'omo los negocios promocionan sus servicios, dan a conocer sus establecimientos y atraen nuevos clientes.
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1pt, topsep=2pt, start=15]
+    \item ?`Podr\'ia describirme qu\'e servicios ofrece su establecimiento y qu\'e tipo de clientes suelen acudir a su negocio?
+    \item ?`C\'omo promociona actualmente su establecimiento y c\'omo consigue que nuevos clientes conozcan los servicios que ofrece?
+    \item ?`Qu\'e dificultades tiene para dar visibilidad a su negocio y llegar a personas que todav\'ia no conocen su establecimiento?
+    \item ?`Qu\'e informaci\'on considera importante que las personas puedan consultar antes de visitar o comunicarse con su establecimiento? Por ejemplo, direcci\'on, horarios, servicios, fotograf\'ias o n\'umeros de contacto.
+    \item ?`Utiliza actualmente medios digitales para promocionar su negocio? Si es as\'i, ?`qu\'e herramientas utiliza y qu\'e dificultades ha encontrado al utilizarlas?
+    \item Si pudiera contar con un perfil digital para mostrar su establecimiento, los servicios que ofrece, fotograf\'ias, ubicaci\'on y medios de contacto, ?`qu\'e caracter\'isticas considerar\'ia necesarias?
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{Cierre:} preguntar si desea agregar algo, agradecer y anotar la hora de fin. Las notas se pasan a limpio el mismo d\'ia, solo con el c\'odigo del participante.
+
+\end{document}

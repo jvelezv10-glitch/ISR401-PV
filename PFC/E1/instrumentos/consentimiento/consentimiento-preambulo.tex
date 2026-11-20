@@ -1,0 +1,52 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[top=3.1cm, bottom=2.2cm, left=2.0cm, right=2.0cm, headheight=56pt, headsep=12pt, footskip=24pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc, positioning, calc}
+\usepackage[hidelinks]{hyperref}
+
+% Colores institucionales del formulario
+\definecolor{uteqdarkgreen}{RGB}{46, 107, 52}
+\definecolor{uteqblue}{RGB}{31, 78, 121}
+\definecolor{uteqgold}{RGB}{184, 134, 45}
+\definecolor{infobg}{RGB}{242, 247, 242}
+\definecolor{infoborder}{RGB}{120, 158, 122}
+\definecolor{rowalt}{RGB}{245, 249, 245}
+\definecolor{warnbg}{RGB}{254, 249, 231}
+\definecolor{warnborder}{RGB}{226, 178, 86}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\cbox}{\tikz[baseline=-0.2ex]\draw[solid, sharp corners, thick, black!80] (0,0) rectangle (0.32cm,0.32cm);}
+
+\newcommand{\secHeading}[1]{%
+    \vspace{8pt}%
+    {\large\bfseries\color{uteqdarkgreen} #1}\\[-5pt]%
+    {\color{uteqgold}\rule{\textwidth}{1.0pt}}\\[3pt]%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{%
+    \includegraphics[width=0.92\textwidth]{logo_uteq.png}%
+}
+\fancyfoot[L]{\footnotesize\color{black!70} ISR-401 Ingenier\'ia de Requisitos $\cdot$ Consentimiento informado $\cdot$ PFC-ISR401-NEX-A03}
+\fancyfoot[R]{\footnotesize\color{black!70} P\'agina \thepage\ de 4}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.8pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{uteqgold}\leaders\hrule height \footrulewidth\hfill}}
