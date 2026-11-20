@@ -1,0 +1,306 @@
+% TA-PFC-E1 · NEXORA · Paca Pilataza L. A., Velez Vinces J. G. (Paralelo B)
+% Compilar: pdflatex main -> bibtex main -> pdflatex main -> pdflatex main
+% Las referencias estan en referencias.bib (misma carpeta).
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{mathptmx}
+\usepackage[margin=2.5cm, headheight=14pt]{geometry}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{uteqgreen}{RGB}{18, 112, 58}
+\definecolor{tableheader}{RGB}{235, 242, 238}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\captionsetup{font=small, labelfont=bf, labelsep=period, skip=4pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.22}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small UTEQ $\cdot$ Ingenier\'ia de Requerimientos (ISR-401)}
+\fancyhead[R]{\small TA-PFC-E1 $\cdot$ Planificaci\'on y Elicitaci\'on}
+\fancyfoot[L]{\small Paca Pilataza L. A., V\'elez Vinces J. G.}
+\fancyfoot[R]{\small P\'agina \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+% ==================== ENCABEZADO (ESTILO SGRA) ====================
+\begin{center}
+    {\Large \textbf{Planificaci\'on y Elicitaci\'on de Requisitos para una Plataforma de Promoci\'on y Difusi\'on de Servicios de Profesionales Independientes y Establecimientos Comerciales}} \\[8pt]
+    
+    {\normalsize Luis Alberto Paca Pilataza\textsuperscript{1}, Jostin Gustavo V\'elez Vinces\textsuperscript{1}} \\[4pt]
+    {\small \textsuperscript{1} Carrera de Ingenier\'ia de Software -- Cuarto Nivel Paralelo B, Facultad de Ciencias de la Computaci\'on, \\
+    Universidad T\'ecnica Estatal de Quevedo (UTEQ). Quevedo, Ecuador \\
+    \texttt{lpacap@uteq.edu.ec}, \texttt{jvelezv10@uteq.edu.ec}}
+\end{center}
+
+\vspace{4pt}
+
+\noindent\textbf{Resumen.} El presente documento establece la base de planificaci\'on y elicitaci\'on de requisitos para el desarrollo de una plataforma orientada a la promoci\'on y difusi\'on de servicios ofrecidos por profesionales independientes y establecimientos comerciales en el cant\'on Quevedo. En la actualidad, la b\'usqueda de servicios como electricidad, plomer\'ia, cerrajer\'ia, carpinter\'ia o atenci\'on en locales comerciales se realiza de manera informal mediante recomendaciones de conocidos o publicaciones sueltas en redes sociales, lo que genera desconfianza, falta de informaci\'on previa y poca visibilidad para los proveedores locales. Con base en los lineamientos de la norma ISO/IEC/IEEE 29148:2018 \cite{iso29148}, Wiegers y Beatty \cite{wiegers2013} y Pohl \cite{pohl2025}, se presenta la ficha del proyecto, la identificaci\'on de las partes interesadas, la delimitaci\'on del alcance del sistema, el diagrama de contexto y el plan de elicitaci\'on de requisitos.
+
+\noindent\textbf{Palabras clave:} Promoci\'on de servicios; profesionales independientes; establecimientos comerciales; partes interesadas; alcance del sistema; elicitaci\'on de requisitos.
+
+\vspace{4pt}
+\hrule
+\vspace{6pt}
+
+% ==================== A. FICHA DEL PROYECTO ====================
+\section*{A. Ficha del proyecto}
+\addcontentsline{toc}{section}{A. Ficha del proyecto}
+
+En el cant\'on Quevedo, las personas que necesitan contratar un servicio para el hogar o localizar un negocio específico suelen enfrentar dificultades para encontrar opciones confiables y cercanas a su sector. Al mismo tiempo, los trabajadores independientes y propietarios de locales comerciales no cuentan con un espacio digital centralizado donde puedan mostrar sus servicios, fotograf\'ias de trabajos anteriores, ubicaci\'on y datos de contacto. En la Tabla~\ref{tab:ficha} se presenta la ficha general del proyecto que resume el sistema a desarrollar, el entorno cliente, la problem\'atica y el objetivo general planteado \cite{iso29148}.
+
+\begin{table}[H]
+\centering
+\caption{Ficha general del proyecto}
+\label{tab:ficha}
+\small
+\begin{tabularx}{\textwidth}{|L{3.8cm}|Y|}
+\hline
+\rowcolor{tableheader}
+\textbf{Elemento} & \textbf{Descripci\'on} \\
+\hline
+\textbf{Nombre del sistema} & \textbf{NEXORA} --- Plataforma para la promoci\'on y difusi\'on de servicios ofrecidos por profesionales independientes y establecimientos comerciales. \\
+\hline
+\textbf{Organizaci\'on cliente (representativa)} & Profesionales independientes de oficios t\'ecnicos y propietarios de establecimientos comerciales de servicios del cant\'on Quevedo, provincia de Los R\'ios. \\
+\hline
+\textbf{Problema identificado} & Actualmente, la b\'usqueda y promoci\'on de servicios en Quevedo se realiza de manera dispersa por medio de recomendaciones verbales, grupos de redes sociales o recorridos presenciales. Los clientes tienen dificultades para encontrar proveedores en su propio sector, desconocen horarios o n\'umeros de contacto actualizados y sienten desconfianza al no poder ver fotograf\'ias de trabajos realizados anteriormente. Por su parte, los profesionales independientes y los establecimientos comerciales tienen poca visibilidad para darse a conocer y atraer nuevos clientes fuera de su c\'irculo cercano. \\
+\hline
+\textbf{Oportunidad} & Crear una plataforma organizada donde los profesionales independientes y los locales comerciales puedan publicar un perfil digital con sus servicios, fotograf\'ias de trabajos previos, ubicaci\'on por sector, horarios y canales de contacto directo, facilitando que los clientes encuentren opciones cercanas y confiables en poco tiempo. \\
+\hline
+\textbf{Objetivo general} & Identificar las necesidades, dificultades, expectativas y caracter\'isticas de b\'usqueda y promoci\'on de servicios de los clientes, profesionales independientes y propietarios de establecimientos comerciales, con la finalidad de establecer los requisitos del sistema propuesto. \\
+\hline
+\end{tabularx}
+\end{table}
+
+% ==================== B. DESCRIPCION DE LAS PARTES INTERESADAS ====================
+\section*{B. Descripci\'on de las partes interesadas}
+\addcontentsline{toc}{section}{B. Descripci\'on de las partes interesadas}
+
+De acuerdo con la norma ISO/IEC/IEEE 29148:2018 \cite{iso29148} y el programa de estudio del IREB \cite{ireb2026}, identificar a las partes interesadas permite conocer qui\'enes utilizar\'an el sistema o se ver\'an afectados por su funcionamiento. En este proyecto intervienen principalmente tres grupos de usuarios externos (clientes, profesionales independientes y propietarios de establecimientos comerciales), adem\'as de los roles encargados de la administraci\'on y del an\'alisis del sistema. En la Tabla~\ref{tab:stakeholders} se describen los roles identificados, sus intereses, su nivel de influencia y la estrategia para involucrarlos en el proceso.
+
+\begin{table}[H]
+\centering
+\caption{Descripci\'on y an\'alisis de las partes interesadas del sistema}
+\label{tab:stakeholders}
+\small
+\begin{tabularx}{\textwidth}{|L{3.1cm}|Y|C{2.0cm}|Y|}
+\hline
+\rowcolor{tableheader}
+\textbf{Rol} & \textbf{Intereses principales en el sistema} & \textbf{Nivel de influencia} & \textbf{Estrategia de involucramiento} \\
+\hline
+\textbf{1. Clientes o usuarios} & Encontrar con facilidad profesionales o establecimientos comerciales dentro de su ciudad, cant\'on o sector; consultar servicios, horarios, ubicaci\'on y fotograf\'ias de trabajos realizados que les generen confianza antes de comunicarse. & Alta & Aplicar entrevistas y encuestas para conocer c\'omo buscan servicios actualmente, qu\'e dificultades tienen y qu\'e informaci\'on necesitan ver antes de contactar a un proveedor. \\
+\hline
+\textbf{2. Profesionales independientes} & Dar a conocer su oficio o actividad (electricidad, plomer\'ia, cerrajer\'ia, carpinter\'ia, entre otros), mostrar fotograf\'ias de trabajos realizados, indicar los sectores a los que pueden desplazarse y conseguir nuevos clientes. & Alta & Realizar entrevistas individuales para identificar c\'omo promocionan hoy su trabajo, qu\'e problemas enfrentan para captar clientes y qu\'e datos desean incluir en su perfil digital. \\
+\hline
+\textbf{3. Propietarios de establecimientos comerciales} & Promocionar su local f\'isico, difundir los servicios que ofrecen, mostrar su direcci\'on, horarios de atenci\'on, fotograf\'ias del establecimiento y n\'umeros de contacto para atraer a personas que a\'un no conocen su negocio. & Alta & Realizar entrevistas en sus locales comerciales para conocer qu\'e medios digitales utilizan, qu\'e limitaciones tienen para dar visibilidad a su negocio y qu\'e caracter\'isticas requieren en su perfil. \\
+\hline
+\textbf{4. Administrador del sistema} & Mantener organizadas las categor\'ias de servicios y los sectores geogr\'aficos dentro de la plataforma, as\'i como revisar que los perfiles publicados contengan informaci\'on clara y real. & Media & Definir junto con el equipo las reglas b\'asicas para el registro, organizaci\'on y publicaci\'on de perfiles dentro de la plataforma. \\
+\hline
+\textbf{5. Equipo de an\'alisis de requisitos} & Recopilar informaci\'on real de los usuarios mediante los instrumentos de elicitaci\'on, analizar sus necesidades y documentar de forma clara los requisitos del sistema propuesto. & Alta & Planificar y ejecutar las sesiones de entrevistas y encuestas, organizar los hallazgos obtenidos y validar que el alcance responda a lo expresado por los participantes. \\
+\hline
+\end{tabularx}
+\end{table}
+
+% ==================== C. DEFINICION DEL ALCANCE ====================
+\section*{C. Definici\'on del alcance}
+\addcontentsline{toc}{section}{C. Definici\'on del alcance}
+
+Para evitar confusiones sobre el prop\'osito del sistema, es necesario definir con claridad hasta d\'onde llega su funcionamiento \cite{wiegers2013}. El sistema propuesto tiene como l\'imite ser una plataforma informativa de \textbf{promoci\'on, difusi\'on, b\'usqueda y contacto directo} entre clientes y proveedores de servicios locales. Esto significa que el sistema ayuda al cliente a encontrar, comparar y elegir a un profesional independiente o establecimiento comercial mediante su perfil digital, pero la comunicaci\'on final, el acuerdo del trabajo y el pago se realizan de forma directa entre ambas partes fuera de la plataforma.
+
+En la Tabla~\ref{tab:alcance} se detalla lo que est\'a dentro del alcance del sistema y lo que queda fuera de \'el.
+
+\begin{table}[H]
+\centering
+\caption{Delimitaci\'on de lo que est\'a dentro y fuera del alcance del sistema}
+\label{tab:alcance}
+\small
+\begin{tabularx}{\textwidth}{|Y|Y|}
+\hline
+\rowcolor{tableheader}
+\textbf{Dentro del alcance (Lo que el sistema S\'I har\'a)} & \textbf{Fuera del alcance (Lo que el sistema NO har\'a)} \\
+\hline
+$\bullet$ \textbf{Perfiles para profesionales independientes:} Registro y publicaci\'on de un perfil digital con datos del trabajador, oficio, servicios ofrecidos, experiencia, sectores a los que se desplaza y medios de contacto. & $\bullet$ \textbf{Cobros o pagos dentro de la plataforma:} El sistema no procesar\'a pagos con tarjetas de cr\'edito, transferencias bancarias ni cobrar\'a comisiones por los servicios. \\
+\hline
+$\bullet$ \textbf{Perfiles para establecimientos comerciales:} Registro y publicaci\'on de un perfil para negocios con nombre del local, servicios que ofrece, direcci\'on f\'isica, ubicaci\'on, horarios de atenci\'on y n\'umeros de contacto. & $\bullet$ \textbf{Negociaci\'on de precios o contrataci\'on interna:} El sistema no calcular\'a presupuestos ni generar\'a contratos; el cliente y el proveedor acuerdan el servicio directamente al comunicarse. \\
+\hline
+$\bullet$ \textbf{Galer\'ia de fotograf\'ias de trabajos realizados:} Espacio en el perfil para subir y mostrar fotograf\'ias reales de trabajos anteriores o de las instalaciones del establecimiento comercial. & $\bullet$ \textbf{Rastreo en vivo del trabajador:} No se realizar\'a seguimiento por GPS en tiempo real del desplazamiento del profesional hacia la casa del cliente. \\
+\hline
+$\bullet$ \textbf{B\'usqueda y filtrado de servicios:} Buscador para que los clientes encuentren opciones filtrando por tipo de servicio u oficio y por ubicaci\'on geogr\'afica (ciudad, cant\'on o sector). & $\bullet$ \textbf{Facturaci\'on electr\'onica o contabilidad:} La plataforma no emitir\'a facturas ni llevar\'a el control contable de los ingresos de los profesionales o negocios. \\
+\hline
+$\bullet$ \textbf{Informaci\'on de confianza y contacto directo:} Visualizaci\'on clara de los datos del proveedor y enlaces directos para comunicarse por WhatsApp, llamada telef\'onica o visitar el local. & $\bullet$ \textbf{Intermediaci\'on legal o garant\'ias de obra:} El sistema funciona como un medio de difusi\'on y directorio, sin intervenir legalmente en la ejecuci\'on f\'isica del trabajo. \\
+\hline
+\end{tabularx}
+\end{table}
+
+\textbf{Restricciones principales del sistema:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item \textbf{Privacidad y autorizaci\'on de datos:} Toda informaci\'on publicada en los perfiles (n\'umeros de contacto, direcci\'on, servicios y fotograf\'ias de trabajos realizados) ser\'a registrada voluntariamente por cada profesional o propietario de establecimiento para fines de promoci\'on p\'ublica.
+    \item \textbf{Veracidad y actualizaci\'on de la informaci\'on:} Los perfiles requerir\'an completar los datos esenciales (servicios, sector o direcci\'on y medio de contacto) antes de mostrarse al p\'ublico para evitar anuncios vac\'ios o desactualizados.
+    \item \textbf{Tiempo de ejecuci\'on acad\'emica:} El levantamiento, an\'alisis y especificaci\'on de requisitos debe ajustarse a los plazos establecidos dentro del per\'iodo acad\'emico de la asignatura.
+\end{itemize}
+
+% ==================== D. DIAGRAMA DE CONTEXTO DEL SISTEMA ====================
+\section*{D. Diagrama de contexto del sistema}
+\addcontentsline{toc}{section}{D. Diagrama de contexto del sistema}
+
+El diagrama de contexto permite visualizar los l\'imites de la plataforma propuesta, ubic\'andola en el centro como un \'unico elemento y mostrando qu\'e informaci\'on intercambia con cada uno de los actores externos que interact\'uan con ella \cite{ireb2026}. En la Figura~\ref{fig:contexto} se presenta el diagrama de contexto del sistema.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+    actorbox/.style={rectangle, draw=black!85, fill=white, thick, minimum width=3.2cm, minimum height=1.2cm, align=center, font=\footnotesize\bfseries},
+    sysnode/.style={circle, draw=uteqgreen!90!black, fill=tableheader, very thick, minimum size=3.4cm, align=center, font=\footnotesize\bfseries},
+    flow/.style={-{Stealth[length=2.2mm]}, semithick, draw=black!85},
+    lbl/.style={font=\scriptsize, align=center, text width=4.5cm}
+]
+
+% Nodo central: Sistema
+\node[sysnode] (sys) at (0,0) {Plataforma de\\Promoci\'on y Difusi\'on\\de Servicios\\(NEXORA)};
+
+% Actores en las 4 esquinas
+\node[actorbox] (cli) at (-6.3, 2.55) {Cliente o\\Usuario};
+\node[actorbox] (pro) at (6.3, 2.55) {Profesional\\Independiente};
+\node[actorbox] (com) at (-6.3, -2.55) {Propietario de\\Establecimiento\\Comercial};
+\node[actorbox] (adm) at (6.3, -2.55) {Administrador\\del Sistema};
+
+% 1. Cliente <-> Sistema (Arriba Izquierda)
+\draw[flow] ([yshift=0.3cm]cli.east) -- (-1.1, 2.85) -- (-1.1, 1.48);
+\node[lbl, text width=3.9cm, anchor=south] at (-2.85, 2.92) {B\'usqueda de servicio u oficio, filtro por ciudad, cant\'on o sector y consulta de perfil.};
+
+\draw[flow] (-1.52, 1.38) -- (-6.3, 1.38) -- (cli.south);
+\node[lbl, anchor=north] at (-3.8, 1.32) {Perfiles de profesionales y locales, fotos de trabajos realizados, ubicaci\'on, horarios y contacto.};
+
+% 2. Profesional Independiente <-> Sistema (Arriba Derecha)
+\draw[flow] ([yshift=0.3cm]pro.west) -- (1.1, 2.85) -- (1.1, 1.48);
+\node[lbl, text width=3.9cm, anchor=south] at (2.85, 2.92) {Datos de oficio, servicios ofrecidos, experiencia, fotos de trabajos previos, zonas y contacto.};
+
+\draw[flow] (1.52, 1.38) -- (6.3, 1.38) -- (pro.south);
+\node[lbl, anchor=north] at (3.8, 1.32) {Perfil digital publicado en el directorio y visibilidad ante nuevos clientes.};
+
+% 3. Propietario de Establecimiento <-> Sistema (Abajo Izquierda)
+\draw[flow] (com.north) -- (-6.3, -1.38) -- (-1.52, -1.38);
+\node[lbl, anchor=south] at (-3.8, -1.32) {Datos del establecimiento, servicios, direcci\'on, horarios, fotograf\'ias y medios de contacto.};
+
+\draw[flow] (-1.1, -1.48) -- (-1.1, -2.85) -- ([yshift=-0.3cm]com.east);
+\node[lbl, text width=3.9cm, anchor=north] at (-2.85, -2.92) {Perfil comercial publicado, ubicaci\'on visible por sector y confirmaci\'on de registro.};
+
+% 4. Administrador <-> Sistema (Abajo Derecha)
+\draw[flow] (adm.north) -- (6.3, -1.38) -- (1.52, -1.38);
+\node[lbl, anchor=south] at (3.8, -1.32) {Organizaci\'on de categor\'ias de servicios, sectores geogr\'aficos y revisi\'on de perfiles.};
+
+\draw[flow] (1.1, -1.48) -- (1.1, -2.85) -- ([yshift=-0.3cm]adm.west);
+\node[lbl, text width=3.9cm, anchor=north] at (2.85, -2.92) {Listado de perfiles registrados y estado de las publicaciones en la plataforma.};
+
+\end{tikzpicture}%
+}
+\caption{Diagrama de contexto del sistema propuesto}
+\label{fig:contexto}
+\end{figure}
+
+% ==================== E. PLAN DE ELICITACION ====================
+\section*{E. Plan de elicitaci\'on}
+\addcontentsline{toc}{section}{E. Plan de elicitaci\'on}
+
+Para levantar los requisitos del sistema a partir de la experiencia real de las personas involucradas, se estructur\'o un plan de elicitaci\'on que combina entrevistas semiestructuradas y encuestas \cite{wiegers2013, pohl2025}.
+
+\subsection*{1. T\'ecnicas seleccionadas y justificaci\'on}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Entrevistas semiestructuradas:} Se seleccion\'o esta t\'ecnica porque permite conversar directamente con los tres grupos principales de partes interesadas (clientes, profesionales independientes y propietarios de establecimientos comerciales). Mediante un guion de 20 preguntas divididas por perfil, se puede profundizar en c\'omo buscan o promocionan servicios actualmente, qu\'e dificultades enfrentan, qu\'e valor le dan a las fotograf\'ias de trabajos anteriores y a la ubicaci\'on por sector, y qu\'e informaci\'on esperan encontrar o mostrar en un perfil digital.
+    \item \textbf{Encuestas / Cuestionarios:} Se eligi\'o como t\'ecnica complementaria para recoger la opini\'on de un n\'umero mayor de ciudadanos y usuarios del cant\'on Quevedo en poco tiempo. Permite confirmar con datos claros cu\'ales son los servicios m\'as buscados, los medios de comunicaci\'on preferidos y los aspectos que generan mayor confianza antes de contactar a un profesional o negocio.
+\end{itemize}
+
+\subsection*{2. Participantes, fechas tentativas y artefactos esperados}
+
+En la Tabla~\ref{tab:plan_elicitacion} se detalla la planificaci\'on de las actividades de elicitaci\'on, indicando los participantes de cada sesi\'on, las fechas tentativas de ejecuci\'on y los artefactos que se obtendr\'an como resultado.
+
+\begin{table}[H]
+\centering
+\caption{Planificaci\'on de actividades de elicitaci\'on de requisitos}
+\label{tab:plan_elicitacion}
+\small
+\begin{tabularx}{\textwidth}{|L{2.8cm}|L{3.1cm}|Y|C{2.4cm}|L{3.3cm}|}
+\hline
+\rowcolor{tableheader}
+\textbf{T\'ecnica} & \textbf{Participantes} & \textbf{Objetivo de la actividad} & \textbf{Fechas tentativas} & \textbf{Artefactos esperados} \\
+\hline
+\textbf{Entrevista semiestructurada (Bloque A)} & \textbf{Parte interesada 1:} Clientes o usuarios (Preguntas 1 a 7) & Conocer c\'omo buscan actualmente profesionales o locales comerciales, qu\'e dificultades tienen, la importancia de las fotos de trabajos previos, la ubicaci\'on y qu\'e les genera confianza. & 20 de noviembre de 2026 & Guion de entrevista aplicado, registro de respuestas de clientes y necesidades de b\'usqueda identificadas. \\
+\hline
+\textbf{Entrevista semiestructurada (Bloque B)} & \textbf{Parte interesada 2:} Profesionales independientes (Preguntas 8 a 14) & Conocer a qu\'e oficio se dedican, c\'omo consiguen clientes, qu\'e medios usan para mostrar fotos de sus trabajos, a qu\'e sectores se desplazan y qu\'e desean en su perfil digital. & 20 de noviembre de 2026 & Guion de entrevista aplicado, registro de respuestas de profesionales y requisitos para el perfil de oficios. \\
+\hline
+\textbf{Entrevista semiestructurada (Bloque C)} & \textbf{Parte interesada 3:} Propietarios de establecimientos comerciales (Preguntas 15 a 20) & Identificar qu\'e servicios ofrecen, c\'omo promocionan su local, qu\'e dificultades tienen para darse a conocer y qu\'e datos (direcci\'on, horarios, fotos, contacto) requieren mostrar. & 20 de noviembre de 2026 & Guion de entrevista aplicado, registro de respuestas de comerciantes y requisitos para el perfil comercial. \\
+\hline
+\textbf{Encuesta a usuarios} & Ciudadanos y usuarios del cant\'on Quevedo & Recopilar preferencias generales sobre frecuencia de b\'usqueda de servicios, canales de contacto preferidos y filtros de ubicaci\'on. & 23 al 27 de noviembre de 2026 & Cuestionario aplicado, resumen de resultados y listado preliminar de requisitos del sistema. \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection*{3. Guion de entrevista dise\~nado por parte interesada}
+
+\textbf{Objetivo:} Identificar las necesidades, dificultades, expectativas y caracter\'isticas de b\'usqueda y promoci\'on de servicios de los clientes, profesionales independientes y propietarios de establecimientos comerciales, con la finalidad de establecer los requisitos del sistema propuesto.
+
+\vspace{3pt}
+\noindent\textbf{A. Parte interesada 1: Clientes o usuarios}\\
+\textit{Objetivo de la entrevista:} Conocer c\'omo las personas buscan actualmente profesionales o establecimientos comerciales cuando necesitan un servicio.
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1pt, topsep=2pt]
+    \item Cuando necesita contratar un servicio, como electricidad, plomer\'ia, cerrajer\'ia o carpinter\'ia, ?`c\'omo suele encontrar a la persona o establecimiento que lo ofrece?
+    \item ?`Qu\'e dificultades ha experimentado al momento de buscar un profesional o establecimiento que ofrezca el servicio que necesita?
+    \item ?`Qu\'e medios utiliza actualmente para encontrar profesionales o negocios? Por ejemplo, recomendaciones de conocidos, redes sociales, buscadores de Internet u otros.
+    \item ?`Qu\'e informaci\'on considera importante conocer antes de comunicarse con un profesional o establecimiento comercial?
+    \item ?`Qu\'e importancia tienen para usted las fotograf\'ias de trabajos realizados anteriormente al momento de elegir un profesional? ?`Por qu\'e?
+    \item ?`C\'omo influye la ubicaci\'on geogr\'afica al momento de buscar un servicio? ?`Qu\'e tan importante es encontrar profesionales dentro de su ciudad, cant\'on o sector?
+    \item ?`Qu\'e aspectos le generan confianza o desconfianza cuando encuentra a un profesional o establecimiento que no conoce?
+\end{enumerate}
+
+\vspace{3pt}
+\noindent\textbf{B. Parte interesada 2: Profesionales independientes}\\
+\textit{Objetivo de la entrevista:} Conocer c\'omo los trabajadores independientes ofrecen sus servicios, promocionan sus habilidades y consiguen nuevos clientes.
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1pt, topsep=2pt, start=8]
+    \item ?`Podr\'ia contarme a qu\'e actividad u oficio se dedica y qu\'e tipos de servicios ofrece actualmente?
+    \item ?`C\'omo consigue actualmente nuevos clientes y c\'omo da a conocer los servicios que ofrece?
+    \item ?`Qu\'e dificultades encuentra al momento de promocionar sus servicios o conseguir nuevos clientes?
+    \item ?`Qu\'e medios utiliza actualmente para mostrar fotograf\'ias, ejemplos o evidencias de los trabajos que ha realizado?
+    \item ?`Qu\'e informaci\'on considera importante que un cliente conozca sobre usted antes de comunicarse para solicitar sus servicios?
+    \item ?`En qu\'e lugares o sectores ofrece sus servicios? ?`C\'omo determina las zonas a las que est\'a dispuesto a desplazarse para realizar un trabajo?
+    \item Si tuviera un perfil digital donde pudiera mostrar sus servicios, experiencia, fotograf\'ias de trabajos realizados y datos de contacto, ?`qu\'e informaci\'on le gustar\'ia incluir y qu\'e beneficios esperar\'ia obtener?
+\end{enumerate}
+
+\vspace{3pt}
+\noindent\textbf{C. Parte interesada 3: Propietarios de establecimientos comerciales}\\
+\textit{Objetivo de la entrevista:} Identificar c\'omo los negocios promocionan sus servicios, dan a conocer sus establecimientos y atraen nuevos clientes.
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1pt, topsep=2pt, start=15]
+    \item ?`Podr\'ia describirme qu\'e servicios ofrece su establecimiento y qu\'e tipo de clientes suelen acudir a su negocio?
+    \item ?`C\'omo promociona actualmente su establecimiento y c\'omo consigue que nuevos clientes conozcan los servicios que ofrece?
+    \item ?`Qu\'e dificultades tiene para dar visibilidad a su negocio y llegar a personas que todav\'ia no conocen su establecimiento?
+    \item ?`Qu\'e informaci\'on considera importante que las personas puedan consultar antes de visitar o comunicarse con su establecimiento? Por ejemplo, direcci\'on, horarios, servicios, fotograf\'ias o n\'umeros de contacto.
+    \item ?`Utiliza actualmente medios digitales para promocionar su negocio? Si es as\'i, ?`qu\'e herramientas utiliza y qu\'e dificultades ha encontrado al utilizarlas?
+    \item Si pudiera contar con un perfil digital para mostrar su establecimiento, los servicios que ofrece, fotograf\'ias, ubicaci\'on y medios de contacto, ?`qu\'e caracter\'isticas considerar\'ia necesarias?
+\end{enumerate}
+
+% ==================== REFERENCIAS ====================
+\bibliographystyle{ieeetr}
+\bibliography{referencias}
+
+\end{document}
