@@ -1,0 +1,193 @@
+% Cuestionario de encuesta a usuarios (instrumento de TA-PFC-E1).
+% Compilar con pdfLaTeX. Parte interesada 1: clientes o usuarios del canton Quevedo.
+% Las lineas "Comprueba" justifican cada pregunta frente a los hallazgos de las
+% entrevistas (PFC/E1/evidencias/). No se incluyen en la version que se aplica.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{mathptmx}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{needspace}
+\raggedcolumns
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\pagestyle{plain}
+
+\newcommand{\op}{$\square$\ }
+\newcommand{\comprueba}[1]{\par\vspace{1pt}{\footnotesize\color{black!55}\textit{Comprueba: #1}}\par}
+\newcommand{\escala}[2]{\par\hspace*{1.2em}#1\quad 1 \op\ 2 \op\ 3 \op\ 4 \op\ 5 \op\quad #2\par}
+\newenvironment{pregunta}[1]{\par\needspace{9\baselineskip}\vspace{7pt}\textbf{#1}\par\vspace{1pt}}{}
+\newenvironment{opciones}{\begin{itemize}[label={}, leftmargin=1.2em, itemsep=0pt, topsep=1pt]}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+{\large\textbf{NEXORA --- Encuesta a usuarios}}\\[2pt]
+{\small UTEQ $\cdot$ Ingenier\'ia de Requerimientos (ISR-401) $\cdot$ Paralelo B $\cdot$ TA-PFC-E1}
+\end{center}
+
+\textbf{Presentaci\'on.} Somos estudiantes de Ingenier\'ia de Software de la Universidad T\'ecnica Estatal de Quevedo. Esta encuesta forma parte de un proyecto acad\'emico que busca entender c\'omo las personas de Quevedo encuentran a profesionales y negocios cuando necesitan un servicio. Responderla toma unos 5 minutos.
+
+\textbf{Participaci\'on.} La encuesta es \textbf{an\'onima y voluntaria}: no se pide su nombre, c\'edula, tel\'efono ni correo. Puede dejar preguntas sin responder o abandonarla en cualquier momento. Est\'a dirigida solo a personas de \textbf{18 a\~nos o m\'as}. Las respuestas se usar\'an \'unicamente con fines acad\'emicos y se presentar\'an en forma de totales, conforme a la LOPDP. Al continuar, usted acepta participar.
+
+\textbf{Instrucciones.} Marque con una X la opci\'on que corresponda. Donde dice \emph{marque todos los que apliquen}, puede elegir varias opciones.
+
+% ------------------------------------------------------------------
+\subsection*{A. Datos generales}
+
+\begin{pregunta}{P1. ?`Cu\'al es su rango de edad?}
+\begin{opciones}
+\item \op a) 18 a 25 a\~nos \qquad \op b) 26 a 35 a\~nos \qquad \op c) 36 a 45 a\~nos
+\item \op d) 46 a 55 a\~nos \qquad \op e) 56 a\~nos o m\'as
+\end{opciones}
+\comprueba{no viene de las entrevistas; sirve para describir qui\'enes respondieron.}
+\end{pregunta}
+
+\begin{pregunta}{P2. ?`En qu\'e parroquia de Quevedo vive?}
+\begin{multicols}{3}
+\begin{opciones}
+\item \op a) Quevedo (centro)
+\item \op b) San Camilo
+\item \op c) San Crist\'obal
+\item \op d) Venus del R\'io Quevedo
+\item \op e) Siete de Octubre
+\item \op f) Viva Alfaro
+\item \op g) Guayac\'an
+\item \op h) Nicol\'as Infante D\'iaz
+\item \op i) 24 de Mayo
+\item \op j) San Carlos
+\item \op k) La Esperanza
+\item \op l) Otro: \rule{2.2cm}{0.4pt}
+\end{opciones}
+\end{multicols}
+\vspace{-8pt}
+\comprueba{no viene de las entrevistas; muestra si respondi\'o gente de todo el cant\'on y permite cruzar la respuesta con P9 (cercan\'ia).}
+\end{pregunta}
+
+% ------------------------------------------------------------------
+\subsection*{B. C\'omo busca hoy}
+
+\begin{pregunta}{P3. En el \'ultimo a\~no, ?`cu\'antas veces ha necesitado contratar a alguien para un servicio como electricidad, plomer\'ia, cerrajer\'ia o carpinter\'ia?}
+\begin{opciones}
+\item \op a) Ninguna \qquad \op b) 1 o 2 veces \qquad \op c) 3 a 5 veces \qquad \op d) M\'as de 5 veces
+\end{opciones}
+\comprueba{qu\'e tan seguido la gente necesita buscar un profesional, para ver si el problema que contaron Nexora-01 y Nexora-03 le pasa a muchas personas.}
+\end{pregunta}
+
+\needspace{13\baselineskip}
+\begin{pregunta}{P4. ?`Qu\'e servicios ha buscado en el \'ultimo a\~no? (marque todos los que apliquen)}
+\begin{multicols}{2}
+\begin{opciones}
+\item \op a) Electricista
+\item \op b) Plomero
+\item \op c) Cerrajero
+\item \op d) Carpintero
+\item \op e) Herrero
+\item \op f) Alba\~nil
+\item \op g) Pintor
+\item \op h) T\'ecnico de electrodom\'esticos
+\item \op i) Mec\'anico
+\item \op j) Otro: \rule{2.2cm}{0.4pt}
+\end{opciones}
+\end{multicols}
+\vspace{-8pt}
+\begin{opciones}
+\item \op k) No he buscado ninguno en el \'ultimo a\~no \textit{(si marca esta, no marque otras)}
+\end{opciones}
+\comprueba{qu\'e servicios se buscan m\'as, para decidir qu\'e categor\'ias hacen falta primero.}
+\end{pregunta}
+
+\begin{pregunta}{P5. Cuando necesita uno de estos servicios, ?`qu\'e es lo primero que hace para encontrar a alguien? (marque solo una)}
+\begin{opciones}
+\item \op a) Pregunto a familiares, amigos o vecinos
+\item \op b) Busco en redes sociales (Facebook, Instagram, TikTok)
+\item \op c) Pregunto en grupos de WhatsApp
+\item \op d) Busco en p\'aginas web o en Google
+\item \op e) Voy directamente a un local que conozco
+\item \op f) Otro: \rule{4cm}{0.4pt}
+\end{opciones}
+\comprueba{que primero se pregunta a conocidos y despu\'es se busca en p\'aginas web o redes (Nexora-01 y Nexora-03), y que tambi\'en se usa WhatsApp (Nexora-03).}
+\end{pregunta}
+
+% ------------------------------------------------------------------
+\subsection*{C. Dificultades}
+
+\begin{pregunta}{P6. ?`Qu\'e problemas ha tenido al buscar a un profesional o negocio? (marque todos los que apliquen)}
+\begin{opciones}
+\item \op a) No encontr\'e a nadie en internet o en redes sociales
+\item \op b) Encontr\'e a alguien, pero no ofrec\'ia justo el servicio que necesitaba
+\item \op c) No sab\'ia si el profesional era de confianza
+\item \op d) No encontr\'e a nadie cerca de mi sector
+\item \op e) No pude ver fotos de trabajos que hubiera hecho antes
+\item \op f) Nadie me supo recomendar a alguien
+\item \op g) No he tenido problemas \textit{(si marca esta, no marque otras)}
+\item \op h) Otro: \rule{4cm}{0.4pt}
+\end{opciones}
+\comprueba{que muchos profesionales no est\'an en internet y que a veces el que se encuentra no ofrece el servicio que se necesita (Nexora-01).}
+\end{pregunta}
+
+% ------------------------------------------------------------------
+\subsection*{D. Confianza e informaci\'on}
+
+\begin{pregunta}{P7. Al elegir un profesional, ?`qu\'e tan importante es para usted ver fotos de trabajos que ha hecho antes?}
+\escala{Nada importante}{Muy importante}
+\comprueba{que las fotos de trabajos anteriores son muy importantes para valorar la calidad (Nexora-01 y Nexora-03).}
+\end{pregunta}
+
+\begin{pregunta}{P8. ?`Qu\'e tanta confianza le da que esas fotos muestren trabajos hechos en lugares o empresas conocidas de la ciudad?}
+\escala{Ninguna confianza}{Mucha confianza}
+\comprueba{que las fotos de trabajos en lugares conocidos dan m\'as seguridad (Nexora-01).}
+\end{pregunta}
+
+\begin{pregunta}{P9. ?`Qu\'e tan importante es para usted que el profesional trabaje cerca de su sector o parroquia?}
+\escala{Nada importante}{Muy importante}
+\comprueba{que se prefiere a alguien cercano porque es m\'as f\'acil reunirse y el trabajo sale m\'as barato (Nexora-01 y Nexora-03).}
+\end{pregunta}
+
+\begin{pregunta}{P10. ?`Qu\'e le har\'ia desconfiar de un profesional que no conoce? (marque todos los que apliquen)}
+\begin{opciones}
+\item \op a) Que nadie me lo haya recomendado
+\item \op b) Que no tenga fotos de trabajos anteriores
+\item \op c) Que no tenga opiniones de otros clientes
+\item \op d) Que no diga d\'onde est\'a ubicado
+\item \op e) Que no indique sus precios aproximados
+\item \op f) Otro: \rule{4cm}{0.4pt}
+\end{opciones}
+\comprueba{que se desconf\'ia si nadie recomienda al profesional o si no tiene fotos ni referencias (Nexora-01 y Nexora-03).}
+\end{pregunta}
+
+\begin{pregunta}{P11. Antes de comunicarse con un profesional o negocio, ?`qu\'e informaci\'on le gustar\'ia conocer? (marque todos los que apliquen)}
+\begin{multicols}{2}
+\begin{opciones}
+\item \op a) Los servicios que ofrece
+\item \op b) Sus a\~nos de experiencia
+\item \op c) Opiniones de otros clientes
+\item \op d) Fotos de trabajos anteriores
+\item \op e) Direcci\'on o sector donde trabaja
+\item \op f) Horario de atenci\'on
+\item \op g) N\'umero de contacto o WhatsApp
+\item \op h) Precios aproximados
+\item \op i) Otro: \rule{3.5cm}{0.4pt}
+\end{opciones}
+\end{multicols}
+\vspace{-8pt}
+\comprueba{que antes de contactar se quiere saber qu\'e servicios ofrece, su experiencia y lo que opinan otros clientes (Nexora-01 y Nexora-03).}
+\end{pregunta}
+
+% ------------------------------------------------------------------
+\subsection*{E. Cierre}
+
+\begin{pregunta}{P12. ?`Hay algo m\'as que quiera contarnos sobre c\'omo busca profesionales o negocios en Quevedo?}
+\par\vspace{4pt}\rule{\textwidth}{0.4pt}\par\vspace{12pt}\rule{\textwidth}{0.4pt}\par
+\comprueba{no viene de un hallazgo puntual; deja espacio para temas que no salieron en las entrevistas.}
+\end{pregunta}
+
+\vspace{10pt}
+\begin{center}\textit{Gracias por su tiempo.}\end{center}
+
+\end{document}
