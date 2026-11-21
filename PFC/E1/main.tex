@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[spanish,es-tabla]{babel}
 \usepackage{mathptmx}
-\usepackage[margin=2.5cm, headheight=14pt]{geometry}
+\usepackage[margin=2.5cm, headheight=15pt]{geometry}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{booktabs}
@@ -113,30 +113,78 @@ Para los vecinos de Quevedo que hoy tienen que buscar un electricista, un plomer
 \section*{B. Descripci\'on de las partes interesadas}
 \addcontentsline{toc}{section}{B. Descripci\'on de las partes interesadas}
 
-De acuerdo con la norma ISO/IEC/IEEE 29148:2018 \cite{iso29148} y el programa de estudio del IREB \cite{ireb2026}, identificar a las partes interesadas permite conocer qui\'enes utilizar\'an el sistema o se ver\'an afectados por su funcionamiento. En este proyecto intervienen principalmente tres grupos de usuarios externos (clientes, profesionales independientes y propietarios de establecimientos comerciales), adem\'as de los roles encargados de la administraci\'on y del an\'alisis del sistema. En la Tabla~\ref{tab:stakeholders} se describen los roles identificados, sus intereses, su nivel de influencia y la estrategia para involucrarlos en el proceso.
+De acuerdo con la norma ISO/IEC/IEEE 29148:2018 \cite{iso29148} y el programa de estudio del IREB \cite{ireb2026}, identificar a las partes interesadas permite conocer qui\'enes utilizar\'an el sistema o se ver\'an afectados por su funcionamiento. En este proyecto se identificaron ocho partes interesadas: tres grupos de usuarios externos (clientes, profesionales independientes y propietarios de establecimientos comerciales), los roles encargados de la administraci\'on y del an\'alisis del sistema, la organizaci\'on cliente que acept\'o participar en el levantamiento de requisitos, el docente de la asignatura y la autoridad de protecci\'on de datos personales. En la Tabla~\ref{tab:stakeholders} se describen sus intereses, su nivel de influencia y la estrategia para involucrarlas en el proceso.
 
 \begin{table}[H]
 \centering
 \caption{Descripci\'on y an\'alisis de las partes interesadas del sistema}
 \label{tab:stakeholders}
-\small
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
 \begin{tabularx}{\textwidth}{|L{3.1cm}|Y|C{2.0cm}|Y|}
 \hline
 \rowcolor{tableheader}
 \textbf{Rol} & \textbf{Intereses principales en el sistema} & \textbf{Nivel de influencia} & \textbf{Estrategia de involucramiento} \\
 \hline
-\textbf{1. Clientes o usuarios} & Encontrar con facilidad profesionales o establecimientos comerciales dentro de su ciudad, cant\'on o sector; consultar servicios, horarios, ubicaci\'on y fotograf\'ias de trabajos realizados que les generen confianza antes de comunicarse. & Alta & Aplicar entrevistas y encuestas para conocer c\'omo buscan servicios actualmente, qu\'e dificultades tienen y qu\'e informaci\'on necesitan ver antes de contactar a un proveedor. \\
+\textbf{1. Clientes o usuarios} & Encontrar con facilidad profesionales o establecimientos comerciales dentro de su ciudad, cant\'on o sector; consultar servicios, horarios, ubicaci\'on y fotograf\'ias de trabajos realizados que les generen confianza antes de comunicarse. & Media & Aplicar entrevistas y encuestas para conocer c\'omo buscan servicios actualmente, qu\'e dificultades tienen y qu\'e informaci\'on necesitan ver antes de contactar a un proveedor. \\
 \hline
-\textbf{2. Profesionales independientes} & Dar a conocer su oficio o actividad (electricidad, plomer\'ia, cerrajer\'ia, carpinter\'ia, entre otros), mostrar fotograf\'ias de trabajos realizados, indicar los sectores a los que pueden desplazarse y conseguir nuevos clientes. & Alta & Realizar entrevistas individuales para identificar c\'omo promocionan hoy su trabajo, qu\'e problemas enfrentan para captar clientes y qu\'e datos desean incluir en su perfil digital. \\
+\textbf{2. Profesionales independientes} & Dar a conocer su oficio o actividad (electricidad, plomer\'ia, cerrajer\'ia, carpinter\'ia, entre otros), mostrar fotograf\'ias de trabajos realizados, indicar los sectores a los que pueden desplazarse y conseguir nuevos clientes. & Media & Realizar entrevistas individuales para identificar c\'omo promocionan hoy su trabajo, qu\'e problemas enfrentan para captar clientes y qu\'e datos desean incluir en su perfil digital. \\
 \hline
-\textbf{3. Propietarios de establecimientos comerciales} & Promocionar su local f\'isico, difundir los servicios que ofrecen, mostrar su direcci\'on, horarios de atenci\'on, fotograf\'ias del establecimiento y n\'umeros de contacto para atraer a personas que a\'un no conocen su negocio. & Alta & Realizar entrevistas en sus locales comerciales para conocer qu\'e medios digitales utilizan, qu\'e limitaciones tienen para dar visibilidad a su negocio y qu\'e caracter\'isticas requieren en su perfil. \\
+\textbf{3. Propietarios de establecimientos comerciales} & Promocionar su local f\'isico, difundir los servicios que ofrecen, mostrar su direcci\'on, horarios de atenci\'on, fotograf\'ias del establecimiento y n\'umeros de contacto para atraer a personas que a\'un no conocen su negocio. & Media & Realizar entrevistas en sus locales comerciales para conocer qu\'e medios digitales utilizan, qu\'e limitaciones tienen para dar visibilidad a su negocio y qu\'e caracter\'isticas requieren en su perfil. \\
 \hline
-\textbf{4. Administrador del sistema} & Mantener organizadas las categor\'ias de servicios y los sectores geogr\'aficos dentro de la plataforma, as\'i como revisar que los perfiles publicados contengan informaci\'on clara y real. & Media & Definir junto con el equipo las reglas b\'asicas para el registro, organizaci\'on y publicaci\'on de perfiles dentro de la plataforma. \\
+\textbf{4. Administrador del sistema} & Mantener organizadas las categor\'ias de servicios y los sectores geogr\'aficos dentro de la plataforma, as\'i como revisar que los perfiles publicados contengan informaci\'on clara y real. & Alta & Definir junto con el equipo las reglas b\'asicas para el registro, organizaci\'on y publicaci\'on de perfiles dentro de la plataforma. \\
 \hline
 \textbf{5. Equipo de an\'alisis de requisitos} & Recopilar informaci\'on real de los usuarios mediante los instrumentos de elicitaci\'on, analizar sus necesidades y documentar de forma clara los requisitos del sistema propuesto. & Alta & Planificar y ejecutar las sesiones de entrevistas y encuestas, organizar los hallazgos obtenidos y validar que el alcance responda a lo expresado por los participantes. \\
 \hline
+\textbf{6. Organizaci\'on cliente} (empresa de sistemas de pesaje, Quevedo) & Que la plataforma ayude a que m\'as personas conozcan el negocio, ya que actualmente los clientes llegan casi solo por recomendaci\'on. & Alta & Como firm\'o la carta de aceptaci\'on, nos reuniremos con el propietario para mostrarle los avances y confirmar si el proyecto va por buen camino. Adem\'as, sigue participando en las entrevistas. \\
+\hline
+\textbf{7. Docente de la asignatura} & Que el proyecto cumpla con lo que exige la asignatura y que los entregables se presenten completos, bien elaborados y a tiempo. & Alta & Presentar cada entregable en las fechas establecidas por la asignatura y aplicar las correcciones que indique. \\
+\hline
+\textbf{8. Superintendencia de Protecci\'on de Datos Personales} & Que los datos personales que aparezcan en los perfiles, como nombres, tel\'efonos y direcciones, se publiquen conforme a la LOPDP~\cite{lopdp2021}. & Alta & No existe contacto directo. El equipo revisa la LOPDP~\cite{lopdp2021} y la toma en cuenta al definir qu\'e datos se muestran en cada perfil. \\
+\hline
 \end{tabularx}
 \end{table}
+
+\subsection*{B.1. Poder, inter\'es y disponibilidad}
+\addcontentsline{toc}{subsection}{B.1. Poder, inter\'es y disponibilidad}
+
+Para decidir c\'omo gestionar a cada parte interesada se valor\'o su poder sobre el proyecto y su inter\'es en el sistema, y se registr\'o cu\'ando y por qu\'e medio se le puede contactar (Tabla~\ref{tab:poder-interes}). Con esa valoraci\'on se construy\'o la matriz poder--inter\'es de la Figura~\ref{fig:poder-interes}.
+
+\begin{table}[H]
+\centering
+\caption{Poder, inter\'es y disponibilidad de las partes interesadas}
+\label{tab:poder-interes}
+\small
+\begin{tabularx}{\textwidth}{|L{3.4cm}|C{1.3cm}|C{1.3cm}|L{2.4cm}|Y|}
+\hline
+\rowcolor{tableheader}
+\textbf{Parte interesada} & \textbf{Poder} & \textbf{Inter\'es} & \textbf{Cuadrante} & \textbf{Disponibilidad} \\
+\hline
+1. Clientes o usuarios & Bajo & Alto & Mantener informados & En las tardes y fines de semana, por encuesta en l\'inea o en persona, como se hizo con Nexora-01 y Nexora-03. \\
+\hline
+2. Profesionales independientes & Bajo & Alto & Mantener informados & Durante el d\'ia suelen estar trabajando; es mejor escribirles por WhatsApp o llamarlos en la noche, como se hizo con Nexora-02. \\
+\hline
+3. Propietarios de establecimientos comerciales & Bajo & Alto & Mantener informados & Visita al local en horario de atenci\'on, en momentos con poca afluencia de clientes. \\
+\hline
+4. Administrador del sistema & Alto & Alto & Gestionar de cerca & Rol a\'un no asignado; mientras tanto lo asume el equipo del proyecto, que define las reglas de categor\'ias y perfiles. Debe consultarse antes de cerrar esos requisitos. \\
+\hline
+5. Equipo de an\'alisis de requisitos & Alto & Alto & Gestionar de cerca & Disponible de forma permanente; coordinaci\'on en clase, por WhatsApp o Google Meet. \\
+\hline
+6. Organizaci\'on cliente & Alto & Alto & Gestionar de cerca & El propietario atiende en la tarde, despu\'es de la jornada de trabajo, en persona o por llamada. \\
+\hline
+7. Docente de la asignatura & Alto & Bajo & Mantener satisfechos & Inter\'es bajo en usar la plataforma, porque no es usuario del sistema; su inter\'es est\'a en el proceso y en la calidad de los entregables. Disponible en horas de clase y tutor\'ias, o por correo institucional. \\
+\hline
+8. Superintendencia de Protecci\'on de Datos Personales & Alto & Bajo & Mantener satisfechos & Sin contacto directo; lo necesario est\'a en la LOPDP~\cite{lopdp2021} y en su sitio web, que se puede consultar en cualquier momento. \\
+\hline
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.86\textwidth}{!}{\input{modelos/matriz-poder-interes.tex}}
+\caption{Matriz poder--inter\'es de las partes interesadas (numeraci\'on de la Tabla~\ref{tab:stakeholders})}
+\label{fig:poder-interes}
+\end{figure}
 
 % ==================== C. DEFINICION DEL ALCANCE ====================
 \section*{C. Definici\'on del alcance}

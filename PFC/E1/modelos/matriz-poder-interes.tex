@@ -1,0 +1,36 @@
+% Matriz poder-interes de las partes interesadas (TA-PFC-E1).
+% Fuente editable de la Figura de la seccion B. Se incluye en main.tex con \input.
+% Numeracion de las partes interesadas segun la Tabla de la seccion B.
+\begin{tikzpicture}[
+  quad/.style={draw=black!60, minimum width=6.4cm, minimum height=3.6cm, align=center},
+  sh/.style={circle, draw=uteqgreen, fill=white, very thick, minimum size=0.75cm, inner sep=0pt, font=\small\bfseries}
+]
+% Cuadrantes
+\node[quad, fill=uteqgreen!8]  (q2) at (0,3.6)   {};
+\node[quad, fill=uteqgreen!22] (q1) at (6.4,3.6) {};
+\node[quad, fill=black!3]      (q4) at (0,0)     {};
+\node[quad, fill=uteqgreen!8]  (q3) at (6.4,0)   {};
+% Titulos de cuadrante
+\node[font=\small\bfseries, anchor=north] at ([yshift=-4pt]q2.north) {Mantener satisfechos};
+\node[font=\small\bfseries, anchor=north] at ([yshift=-4pt]q1.north) {Gestionar de cerca};
+\node[font=\small\bfseries, anchor=north] at ([yshift=-4pt]q4.north) {Monitorear};
+\node[font=\small\bfseries, anchor=north] at ([yshift=-4pt]q3.north) {Mantener informados};
+% Partes interesadas
+\node[sh] at (-0.8,3.3) {7};
+\node[sh] at ( 0.8,3.3) {8};
+\node[sh] at (5.4,3.3) {4};
+\node[sh] at (6.4,3.3) {5};
+\node[sh] at (7.4,3.3) {6};
+\node[sh] at (5.4,-0.3) {1};
+\node[sh] at (6.4,-0.3) {2};
+\node[sh] at (7.4,-0.3) {3};
+\node[font=\footnotesize\itshape, text=black!55] at (0,-0.3) {(ninguna)};
+% Ejes
+\draw[-latex, thick] (-3.4,-1.95) -- (9.9,-1.95) node[midway, below=12pt, font=\small\bfseries] {Inter\'es en el sistema};
+\draw[-latex, thick] (-3.4,-1.95) -- (-3.4,5.55);
+\node[rotate=90, font=\small\bfseries] at (-4.75,1.8) {Poder sobre el proyecto};
+\node[font=\footnotesize, anchor=north] at (0,-1.95) {Bajo};
+\node[font=\footnotesize, anchor=north] at (6.4,-1.95) {Alto};
+\node[font=\footnotesize, anchor=east] at (-3.5,0) {Bajo};
+\node[font=\footnotesize, anchor=east] at (-3.5,3.6) {Alto};
+\end{tikzpicture}
