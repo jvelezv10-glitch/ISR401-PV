@@ -1,0 +1,130 @@
+% Guia de observacion no participante (instrumento 2 de TA-PFC-E1)
+% Compilar con pdfLaTeX. Instrumento independiente e imprimible.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{mathptmx}
+\usepackage[margin=2.0cm]{geometry}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\renewcommand{\arraystretch}{1.4}
+\pagestyle{plain}
+
+\begin{document}
+
+% ==================== PAGINA 1 ====================
+\begin{center}
+{\large\textbf{NEXORA --- Gu\'ia de observaci\'on no participante}}\\[2pt]
+{\small UTEQ $\cdot$ Ingenier\'ia de Requerimientos (ISR-401) $\cdot$ Paralelo B $\cdot$ TA-PFC-E1}\\[2pt]
+{\footnotesize\textit{Estado: sesi\'on planificada (ficha en blanco; completar a mano durante la aplicaci\'on)}}
+\end{center}
+
+\textbf{Objetivo:} Observar de manera no participante, en condiciones reales, c\'omo un proveedor muestra sus servicios, atiende una consulta y comunica sus canales de contacto ---o c\'omo un cliente busca y eval\'ua un servicio antes de comunicarse---, con el fin de identificar pasos concretos, herramientas utilizadas, informaci\'on disponible y dificultades visibles que respalden los requisitos de NEXORA.
+
+\vspace{3pt}
+\textbf{1. Datos de la sesi\'on y verificaci\'on del consentimiento} {\small (no escribir nombres, c\'edulas, tel\'efonos ni direcciones exactas)}
+
+{\small
+\begin{tabularx}{\textwidth}{|L{6.1cm}|Y|}
+\hline
+C\'odigo de sesi\'on & \\ \hline
+C\'odigo del participante & \\ \hline
+Rol del participante & \\ \hline
+Fecha (dd/mm/aaaa) & \\ \hline
+Lugar general (ciudad o tipo de entorno, sin direcci\'on exacta) & \\ \hline
+Duraci\'on (hora de inicio y hora de fin) & \\ \hline
+Observador(a) & \\ \hline
+Consentimiento informado firmado antes de empezar (fila a) & \quad S\'i $\square$ \qquad No $\square$ \\ \hline
+Autoriz\'o grabaci\'on de audio (Secci\'on 7, fila b) & \quad S\'i $\square$ \qquad No $\square$ \\ \hline
+Autoriz\'o grabaci\'on de video (Secci\'on 7, fila c) & \quad S\'i $\square$ \qquad No $\square$ \\ \hline
+Autoriz\'o fotograf\'ias del entorno sin rostro, sin documentos legibles y sin GPS (Secci\'on 7, fila d) & \quad S\'i $\square$ \qquad No $\square$ \\ \hline
+\end{tabularx}
+}
+
+\vspace{2pt}
+{\small\textbf{Regla obligatoria sobre grabaciones y fotograf\'ias:} Ninguna grabaci\'on de audio o video ni fotograf\'ia del entorno puede realizarse si el participante no marc\'o \textbf{S\'i} en la fila correspondiente de la Secci\'on 7 del consentimiento informado. Si no existe autorizaci\'on para registro audiovisual, la sesi\'on se documenta \'unicamente mediante notas escritas en esta ficha.\par}
+
+\vspace{3pt}
+\textbf{2. Modalidad y escenarios propuestos (observaci\'on no participante)}
+
+{\small
+Durante toda la sesi\'on el observador \textbf{no interviene}: no corrige acciones, no sugiere aplicaciones ni interrumpe la actividad habitual del participante. Antes de iniciar, saluda, explica el objetivo, recuerda que el participante puede pausar o detener la observaci\'on en cualquier momento y verifica el consentimiento firmado.
+
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+    \item \textbf{Escenario A (principal --- organizaci\'on cliente):} Observar c\'omo el propietario o encargado de la empresa de servicios t\'ecnicos de balanzas y b\'asculas (Quevedo) muestra sus servicios y trabajos anteriores, recibe una consulta y comunica c\'omo contactarlo (medios digitales, tel\'efono, ubicaci\'on o referencias).
+    \item \textbf{Escenario B (alternativo --- cliente o usuario):} Si la ficha se aplica a un cliente o usuario, observar c\'omo busca un proveedor o establecimiento para un servicio en Quevedo, qu\'e canales revisa y qu\'e informaci\'on consulta antes de decidir contactarlo.
+\end{itemize}
+
+\textbf{C\'omo registrar:} En la Secci\'on 3 anote solo \textbf{hechos observables} (acciones, canales, informaci\'on visible, tropiezos o demoras y tipo de evidencia registrada). Por ejemplo, si el proveedor debe buscar fotograf\'ias en distintas aplicaciones antes de responder una consulta, anote exactamente la acci\'on observada y cada aplicaci\'on o canal utilizado, sin suponer causas. Reserve la Secci\'on 4 para escribir interpretaciones o posibles requisitos derivados para NEXORA. No anote nombres propios, n\'umeros telef\'onicos ni datos de terceros que aparezcan en pantallas o documentos.
+}
+
+% ==================== PAGINA 2 ====================
+\newpage
+\textbf{3. Registro de pasos y hechos observados} {\small (anotar \'unicamente lo observado, sin interpretaciones)}
+
+\vspace{3pt}
+{\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|C{0.9cm}|>{\hsize=1.25\hsize}Y|L{2.3cm}|>{\hsize=0.95\hsize}Y|>{\hsize=0.95\hsize}Y|>{\hsize=0.85\hsize}Y|}
+\hline
+\textbf{Paso} & \textbf{Acci\'on observada} & \textbf{Canal o herramienta} & \textbf{Informaci\'on disponible} & \textbf{Dificultades visibles} & \textbf{Evidencia registrada} \\
+\hline
+ & & & & & \\[2.35cm] \hline
+ & & & & & \\[2.35cm] \hline
+ & & & & & \\[2.35cm] \hline
+ & & & & & \\[2.35cm] \hline
+ & & & & & \\[2.35cm] \hline
+ & & & & & \\[2.35cm] \hline
+ & & & & & \\[2.35cm] \hline
+\end{tabularx}
+}
+
+\vspace{4pt}
+{\footnotesize\textit{Nota:} En «Evidencia registrada» indicar solo el tipo de respaldo autorizado en la Secci\'on 1 (p.\,ej., «Solo notas», «Audio autorizado» o «Foto del entorno sin datos personales»).\par}
+
+% ==================== PAGINA 3 ====================
+\newpage
+\textbf{4. Distinci\'on entre lo observado y las interpretaciones o posibles requisitos}
+
+{\small Complete esta tabla al terminar la observaci\'on o al pasar las notas a limpio, vinculando cada an\'alisis con el n\'umero de paso de la Secci\'on 3 para no mezclar hechos con inferencias.}
+
+\vspace{3pt}
+{\footnotesize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|C{1.4cm}|Y|Y|}
+\hline
+\textbf{Paso ref.} & \textbf{Qu\'e se observ\'o (hecho verificable)} & \textbf{Interpretaci\'on o posible requisito preliminar} \\
+\hline
+ & & \\[2.25cm] \hline
+ & & \\[2.25cm] \hline
+ & & \\[2.25cm] \hline
+ & & \\[2.25cm] \hline
+ & & \\[2.25cm] \hline
+ & & \\[2.25cm] \hline
+\end{tabularx}
+}
+
+\vspace{8pt}
+\textbf{5. Observaciones generales del entorno} {\small (condiciones de uso, conectividad visible o contexto, sin datos identificables)}
+
+\vspace{6pt}
+\noindent\rule{\textwidth}{0.4pt}\par\vspace{10pt}
+\noindent\rule{\textwidth}{0.4pt}\par\vspace{10pt}
+\noindent\rule{\textwidth}{0.4pt}\par
+
+\vspace{8pt}
+{\small\textbf{Cierre y manejo de evidencias:} Agradecer al participante y anotar la hora de fin en la Secci\'on 1. Pasar las notas a limpio el mismo d\'ia identificando la sesi\'on solo por c\'odigo y rol, retirando cualquier dato que permita identificar a la persona, al negocio o a terceros. Guardar el consentimiento firmado y cualquier grabaci\'on o fotograf\'ia autorizada \'unicamente en la carpeta privada institucional (\texttt{@uteq.edu.ec}) y registrarlos en \texttt{PFC/E1/evidencias/MANIFIESTO.md} con su huella SHA-256.\par}
+
+\end{document}

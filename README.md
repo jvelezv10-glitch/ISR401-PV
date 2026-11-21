@@ -14,7 +14,7 @@ Repositorio del Proyecto Fin de Curso (PFC) de Ingeniería de Requerimientos (IS
 | Carpeta | Actividad | Archivo principal | PDF compilado |
 |---|---|---|---|
 | `PFC/E1/` | TA-PFC-E1: visión, alcance, partes interesadas, contexto y plan de elicitación | `main.tex` | `main.pdf` |
-| `PFC/E1/instrumentos/` | Guion de entrevista y modelo de consentimiento informado | `guion-entrevista.tex`, `consentimiento/consentimiento-modelo.tex` | — |
+| `PFC/E1/instrumentos/` | Guion de entrevista, guía de observación y modelo de consentimiento informado | `guion-entrevista.tex`, `guia-observacion.tex`, `consentimiento/consentimiento-modelo.tex` | — |
 | `PFC/E1/evidencias/` | Notas anonimizadas y `MANIFIESTO.md` de las evidencias privadas | — | — |
 | `PFC/E1/modelos/` | Fuentes editables de los modelos | — | — |
 
@@ -46,6 +46,7 @@ Cada instrumento compila solo con **pdfLaTeX**, sin bibliografía:
 ```bash
 cd PFC/E1/instrumentos
 pdflatex guion-entrevista
+pdflatex guia-observacion
 cd consentimiento
 pdflatex consentimiento-modelo
 ```
