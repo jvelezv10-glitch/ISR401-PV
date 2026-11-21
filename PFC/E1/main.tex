@@ -235,6 +235,38 @@ El diagrama de contexto permite visualizar los l\'imites de la plataforma propue
 \label{fig:contexto}
 \end{figure}
 
+Para complementar el diagrama de contexto, en la Tabla~\ref{tab:perspectivas} se sintetiza el an\'alisis del entorno de NEXORA mediante las ocho perspectivas de contexto propuestas por Pohl~\cite{pohl2025}. Cada fila registra la parte interesada consultada, el hallazgo respaldado en las entrevistas o documentos del proyecto y el requisito preliminar derivado; los aspectos que requieren evidencia adicional o acuerdo del equipo se se\~nalan como pendientes de confirmar.
+
+\begin{table}[H]
+\centering
+\caption{An\'alisis del contexto del sistema seg\'un las ocho perspectivas de Pohl}
+\label{tab:perspectivas}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|L{2.05cm}|L{2.55cm}|>{\hsize=1.12\hsize}Y|>{\hsize=0.88\hsize}Y|}
+\hline
+\rowcolor{tableheader}
+\textbf{Perspectiva} & \textbf{Stakeholder a entrevistar} & \textbf{Hallazgos clave} & \textbf{Requisitos derivados (preliminares)} \\
+\hline
+\textbf{Uso} & Cliente o usuario & El cliente entrevistado indica que las fotograf\'ias de trabajos anteriores le permiten valorar la calidad del servicio (Entrevista al cliente, pregunta 5). & La plataforma deber\'a permitir que el cliente consulte fotograf\'ias de trabajos anteriores en el perfil del profesional. \\
+\hline
+\textbf{Sujeto} & Profesional independiente & El profesional independiente (herrero) ofrece fabricaci\'on de estructuras met\'alicas, soldadura y reparaciones; atiende en Quevedo y sectores cercanos, y decide hasta d\'onde desplazarse seg\'un el tipo de trabajo y la distancia (Entrevista al profesional independiente, preguntas 8 y 13). & La plataforma deber\'a permitir que el profesional registre sus servicios y los sectores donde atiende. \\
+\hline
+\textbf{TI} & Cliente o usuario y profesional independiente & El cliente utiliza WhatsApp para buscar servicios (Entrevista al cliente, pregunta 3) y el profesional independiente lo emplea para enviar fotograf\'ias a quienes le consultan (Entrevista al profesional independiente, pregunta 11). Seg\'un el alcance (secci\'on C, Tabla~\ref{tab:alcance}), la comunicaci\'on final ocurre fuera de la plataforma mediante enlaces directos. & El perfil deber\'a ofrecer un enlace de contacto externo por WhatsApp cuando el proveedor registre ese canal, conforme al alcance de la secci\'on C. \\
+\hline
+\textbf{Desarrollo} & Equipo del proyecto & El equipo mantiene el informe en \LaTeX{} en el repositorio y document\'o c\'omo compilarlo (\texttt{README.md} y \texttt{PFC/E1/main.tex}), sujeto a los plazos acad\'emicos (secci\'on C). \textbf{Pendiente de confirmar:} acuerdo del equipo sobre metodolog\'ia de desarrollo, herramientas y proceso de validaci\'on. & El equipo deber\'a poder regenerar el PDF del informe siguiendo las instrucciones de \texttt{README.md}. \textbf{Pendiente de confirmar:} requisitos de proceso sobre metodolog\'ia, herramientas y validaci\'on. \\
+\hline
+\textbf{Negocio} & Profesional independiente & El profesional independiente (herrero) consigue clientes principalmente por recomendaciones y tiene dificultad para darse a conocer en otros sectores (Entrevista al profesional independiente, preguntas 9 y 10). & La plataforma deber\'a permitir buscar proveedores por tipo de servicio y sector para que los clientes descubran profesionales que atienden en su zona. \\
+\hline
+\textbf{Innovaci\'on} & Profesional independiente & Ante la idea de un perfil digital, el profesional independiente (herrero) expres\'o que le gustar\'ia reunir fotograf\'ias de trabajos terminados y una lista clara de lo que puede hacer (Entrevista al profesional independiente, pregunta 14). & La plataforma deber\'a reunir en un mismo perfil p\'ublico la lista de servicios, las fotograf\'ias de trabajos y el medio de contacto que el profesional elija. \\
+\hline
+\textbf{Sociedad} & Profesional independiente & El profesional independiente (herrero) expres\'o inter\'es en incluir su tel\'efono y direcci\'on en un perfil digital (Entrevista al profesional independiente, pregunta 14), acorde con el registro voluntario de la secci\'on C. \textbf{Pendiente de confirmar:} qu\'e datos autorizar\'ia a publicar en un perfil real y obligaciones aplicables de la LOPDP~\cite{lopdp2021}. & La plataforma deber\'a mostrar \'unicamente los datos de contacto que el proveedor decida publicar. \textbf{Pendiente de confirmar:} mecanismo de autorizaci\'on expresa, retiro de datos seg\'un la LOPDP~\cite{lopdp2021} y accesibilidad. \\
+\hline
+\textbf{T\'ecnica} & Profesional independiente & El profesional independiente (herrero) guarda en su celular las fotograf\'ias que comparte con sus clientes (Entrevista al profesional independiente, pregunta 11). \textbf{Pendiente de confirmar:} limitaciones de dispositivo, navegador o conectividad en Quevedo y sectores cercanos. & La plataforma deber\'a permitir que el profesional cargue fotograf\'ias a su perfil desde un tel\'efono m\'ovil. \textbf{Pendiente de confirmar:} restricciones t\'ecnicas de compatibilidad m\'ovil, tama\~no de im\'agenes y conectividad limitada. \\
+\hline
+\end{tabularx}
+\end{table}
+
 % ==================== E. PLAN DE ELICITACION ====================
 \section*{E. Plan de elicitaci\'on}
 \addcontentsline{toc}{section}{E. Plan de elicitaci\'on}
