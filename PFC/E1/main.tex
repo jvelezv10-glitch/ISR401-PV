@@ -248,38 +248,38 @@ El diagrama de contexto permite visualizar los l\'imites de la plataforma propue
 \node[sysnode] (sys) at (0,0) {Plataforma de\\Promoci\'on y Difusi\'on\\de Servicios\\(NEXORA)};
 
 % Actores en las 4 esquinas
-\node[actorbox] (cli) at (-6.3, 2.55) {Cliente o\\Usuario};
-\node[actorbox] (pro) at (6.3, 2.55) {Profesional\\Independiente};
-\node[actorbox] (com) at (-6.3, -2.55) {Propietario de\\Establecimiento\\Comercial};
-\node[actorbox] (adm) at (6.3, -2.55) {Administrador\\del Sistema};
+\node[actorbox] (cli) at (-6.7, 2.75) {Cliente o\\Usuario};
+\node[actorbox] (pro) at (6.7, 2.75) {Profesional\\Independiente};
+\node[actorbox] (com) at (-6.7, -2.75) {Propietario de\\Establecimiento\\Comercial};
+\node[actorbox] (adm) at (6.7, -2.75) {Administrador\\del Sistema};
 
 % 1. Cliente <-> Sistema (Arriba Izquierda)
-\draw[flow] ([yshift=0.3cm]cli.east) -- (-1.1, 2.85) -- (-1.1, 1.48);
-\node[lbl, text width=3.9cm, anchor=south] at (-2.85, 2.92) {B\'usqueda de servicio u oficio, filtro por ciudad, cant\'on o sector y consulta de perfil.};
+\draw[flow] ([yshift=0.3cm]cli.east) -- (-1.05, 3.05) -- (-1.05, 1.54);
+\node[lbl, text width=4.1cm, anchor=south] at (-3.1, 3.12) {B\'usqueda de servicio u oficio, filtro por ciudad, cant\'on o sector y consulta de perfil.};
 
-\draw[flow] (-1.52, 1.38) -- (-6.3, 1.38) -- (cli.south);
-\node[lbl, anchor=north] at (-3.8, 1.32) {Perfiles de profesionales y locales, fotos de trabajos realizados, ubicaci\'on, horarios y contacto.};
+\draw[flow] (-1.28, 1.36) -- (-6.7, 1.36) -- (cli.south);
+\node[lbl, text width=4.5cm, anchor=north] at (-4.3, 1.30) {Perfiles de profesionales y locales, fotos de trabajos realizados, ubicaci\'on, horarios y enlaces de contacto directo (WhatsApp o llamada).};
 
 % 2. Profesional Independiente <-> Sistema (Arriba Derecha)
-\draw[flow] ([yshift=0.3cm]pro.west) -- (1.1, 2.85) -- (1.1, 1.48);
-\node[lbl, text width=3.9cm, anchor=south] at (2.85, 2.92) {Datos de oficio, servicios ofrecidos, experiencia, fotos de trabajos previos, zonas y contacto.};
+\draw[flow] ([yshift=0.3cm]pro.west) -- (1.05, 3.05) -- (1.05, 1.54);
+\node[lbl, text width=4.1cm, anchor=south] at (3.1, 3.12) {Datos de oficio, servicios ofrecidos, experiencia, fotos de trabajos previos, zonas y contacto.};
 
-\draw[flow] (1.52, 1.38) -- (6.3, 1.38) -- (pro.south);
-\node[lbl, anchor=north] at (3.8, 1.32) {Perfil digital publicado en el directorio y visibilidad ante nuevos clientes.};
+\draw[flow] (1.28, 1.36) -- (6.7, 1.36) -- (pro.south);
+\node[lbl, text width=4.5cm, anchor=north] at (4.3, 1.30) {Perfil digital publicado en el directorio, sectores visibles y confirmaci\'on de registro.};
 
 % 3. Propietario de Establecimiento <-> Sistema (Abajo Izquierda)
-\draw[flow] (com.north) -- (-6.3, -1.38) -- (-1.52, -1.38);
-\node[lbl, anchor=south] at (-3.8, -1.32) {Datos del establecimiento, servicios, direcci\'on, horarios, fotograf\'ias y medios de contacto.};
+\draw[flow] (com.north) -- (-6.7, -1.36) -- (-1.28, -1.36);
+\node[lbl, text width=4.5cm, anchor=south] at (-4.3, -1.30) {Datos del establecimiento, servicios, direcci\'on, horarios, fotograf\'ias y medios de contacto.};
 
-\draw[flow] (-1.1, -1.48) -- (-1.1, -2.85) -- ([yshift=-0.3cm]com.east);
-\node[lbl, text width=3.9cm, anchor=north] at (-2.85, -2.92) {Perfil comercial publicado, ubicaci\'on visible por sector y confirmaci\'on de registro.};
+\draw[flow] (-1.05, -1.54) -- (-1.05, -3.05) -- ([yshift=-0.3cm]com.east);
+\node[lbl, text width=4.1cm, anchor=north] at (-3.1, -3.12) {Perfil comercial publicado, ubicaci\'on visible por sector y confirmaci\'on de registro.};
 
 % 4. Administrador <-> Sistema (Abajo Derecha)
-\draw[flow] (adm.north) -- (6.3, -1.38) -- (1.52, -1.38);
-\node[lbl, anchor=south] at (3.8, -1.32) {Organizaci\'on de categor\'ias de servicios, sectores geogr\'aficos y revisi\'on de perfiles.};
+\draw[flow] (adm.north) -- (6.7, -1.36) -- (1.28, -1.36);
+\node[lbl, text width=4.5cm, anchor=south] at (4.3, -1.30) {Organizaci\'on de categor\'ias de servicios, sectores geogr\'aficos y revisi\'on de perfiles.};
 
-\draw[flow] (1.1, -1.48) -- (1.1, -2.85) -- ([yshift=-0.3cm]adm.west);
-\node[lbl, text width=3.9cm, anchor=north] at (2.85, -2.92) {Listado de perfiles registrados y estado de las publicaciones en la plataforma.};
+\draw[flow] (1.05, -1.54) -- (1.05, -3.05) -- ([yshift=-0.3cm]adm.west);
+\node[lbl, text width=4.1cm, anchor=north] at (3.1, -3.12) {Listado de perfiles registrados y estado de las publicaciones en la plataforma.};
 
 \end{tikzpicture}%
 }
